@@ -10,13 +10,14 @@ function rope.place(itemstack, placer, pointed_thing)
 			return itemstack
 		end
 
-		while oldnode.name == "air" and not itemstack:is_empty() do
+		while (oldnode.name == "air" or oldnode.name == "ignore") and not itemstack:is_empty() do
 			local newnode = {name = stackname, param1 = 0}
 			minetest.set_node(pos, newnode)
 			itemstack:take_item()
 			pos.y = pos.y - 1
 			oldnode = minetest.get_node(pos)
 		end
+		print("Next node: "..oldnode.name)
 	end
 	return itemstack
 end
