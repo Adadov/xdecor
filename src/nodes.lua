@@ -89,7 +89,8 @@ register_storage("cabinet", "Wooden Cabinet", {
 register_storage("cabinet_half", "Half Wooden Cabinet", {
 	inv_size = 8,
 	node_box = xdecor.nodebox.slab_y(0.5, 0.5),
-	on_rotate = screwdriver.rotate_simple,
+	--on_rotate = screwdriver.rotate_simple,
+	on_rotate = nil,
 	tiles = {"xdecor_cabinet_sides.png", "xdecor_cabinet_sides.png",
 		 "xdecor_half_cabinet_sides.png", "xdecor_half_cabinet_sides.png",
 		 "xdecor_half_cabinet_sides.png", "xdecor_half_cabinet_front.png"}
